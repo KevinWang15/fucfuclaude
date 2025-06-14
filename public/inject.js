@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Find all div elements within this root (including the root if it's a div)
             const elementsToCheck = [
                 ...(mutation.target.tagName === 'DIV' ? [mutation.target] : []),
-                ...mutation.target.getElementsByTagName('div')
+                ...(mutation.target.getElementsByTagName ? mutation.target.getElementsByTagName('div') : [])
             ];
 
             // Check each element for redaction
