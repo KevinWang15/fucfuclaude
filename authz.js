@@ -2,7 +2,7 @@ import { dbPromise } from "./database.js";
 
 export const conversationOwnershipMiddleware = async (req, res, next) => {
 
-  if(req.url.endsWith("chat_conversations/count")){
+  if (req.url.endsWith("chat_conversations/count") || req.url.endsWith("chat_conversations/count_all")) {
     return res.status(200).json(0);
   }
 
